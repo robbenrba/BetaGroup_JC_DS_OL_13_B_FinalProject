@@ -1,36 +1,61 @@
 # finalProject
 Final Project, JCDSOL-013(B), Roberto Benedict & Gretty Margaretha
-## [Placeholder]
-## Deskripsi
-Proyek python dalam ipynb ini merupakan pembuatan model Machine Learning untuk memprediksi customer churn pada bidang e-commerce. Sebuah perusahaan yang bergerak di bidang E-commerce ingin mengurangi jumlah customer yang berpotensi untuk churn. Churn yang dimaksud adalah keadaan seorang customer yang berhenti menggunakan produk atau jasa perusahaan, dalam hal ini berupa platform E-commerce perusahaan. Berhenti menggunakan dapat mengimplikasikan kekecewaan customer maupun customer yang lebih memilih produk competitor. Perusahaan ingin mengetahui kandidat customer churn. Hal ini dapat membantu perusahaan dalam menyusun strategi minimalisasi customer churn seperti dengan mengurangi biaya promosi dengan alokasi biaya yang lebih fokus terhadap kandidat customer churn. Informasi mengenai customer didapatkan dari data pendaftaran dan transaksi historikal customer. 
 
-**Target :**  
+### Context :
+Bank marketing campaigns dataset analysis - Opening a Term Deposit dataset is a dataset describing a Portugal bank marketing campaigns results. Conducted campaigns were based mostly on direct phone calls, offering bank client to place a term deposit.
 
-* 0 : Tidak churn
-* 1 : Churn
+**Socio-economic conditions in the campaign period: May 2008 to June 2013**
+- Post global financial crisis effects in Portugal
+- Bank restructuring of Banco Montepio
 
-## Pernyataan Masalah
-Customer churn berkaitan langsung dengan pendapatan perusahaan, oleh karena itu adalah sangat penting untuk meminimalisasi customer yang kemungkinan akan churn berdasarkan ciri tertentu. Perusahaan perlu melakukan sebuah kategorisasi customer yang kemungkinan akan churn sehingga sumber daya, waktu, maupun anggaran dapat dialokasikan dengan efisien dan efektif terhadap kategori customer yang berpotensi churn tersebut dalam upaya mencegah customer-customer tersebut melakukan churn. Alokasi yang dimaksud dapat berupa anggaran promosi yang fokus terhadap customer yang berpotensi untuk churn. Jika dibandingkan dengan anggaran promosi untuk semua customer, tentunya ada porsi anggaran yang kurang tepat guna, yaitu alokasi anggaran promosi yang sama untuk customer yang tidak berpotensi untuk churn.
+Due to the nature of the conditions during the period, a potential client would also have lower interest in subscribing for term deposit, which in turn would make cost of outreach or promotion cost higher to accomodate the lower interest of the clients. 
+
+If after all marketing efforts client had agreed to place deposit - target variable marked 'yes', otherwise 'no'
+
+Target y (term): 
+
+* 0 : no, disagree to place deposit
+* 1 : yes, agree to place deposit
+
+### Problem Statement :
+
+The marketing process can consume significant time and resources if the bank targets all potential clients without prior filtering or targeted marketing, resulting in wasted time and resources. The effects are more dramatic in the post global financial crisis socio-economic conditions bringing about the crucial requirement of the bank to prioritize minimizing costs due to the higher reaching out cost for new clients in the economic climate. The bank wants to increase marketing efficiency by identifying which potential clients are likely to agree to open a term deposit account.
+
+### Goals :
+1. Identify client feature patterns for the most probable potential clients:
+    * Most important features correlated with the target
+    * Seasonality
+    * Socio-economic conditions
+2. Minimize revenue loss through promotion costs minimization : How much budget allocation percentage would be minimized ?
+
+Based on these issues, the bank aims to predict the likelihood of a client agreeing to open a term deposit account. This can support the bank in executing marketing strategies focused on clients most likely to be interested, thereby saving costs, time, and resources.
+
+Additionally, the bank wants to understand the factors influencing a client's decision to open a term deposit account or not, enabling them to develop better plans for approaching potential clients.
 
 ## Analytic Approach
 Analisis data customer akan dilakukan untuk menemukan pola tertentu yang dapat membedakan customer yang berpotensi akan churn atau tidak. Tahap selanjutnya, model klasifikasi akan dibuat untuk membantu perusahaan agar dapat melakukan prediksi kemungkinan seorang customer akan melakukan churn atau tidak.
 
-## Tujuan
-Jika dibandingkan dengan biaya promosi untuk semua customer, tentu akan ada biaya yang bisa dihemat jika alokasi biaya difokuskan untuk customer churn saja atau alokasi yang lebih kecil untuk customer yang tidak berpotensi churn.
-Dengan mempertimbangkan masalah tersebut, perusahaan ingin memiliki kemampuan untuk memprediksi potensi seorang customer akan melakukan churn atau tidak. Setelah mengatahui prediksi customer yang akan churn, perusahaan dapat memfokuskan alokasi anggaran promosi kepada para customer tersebut. 
-Tentunya, untuk jangka panjang, perusahaan tertarik untuk mengetahui tentang karakteristik atau faktor tertentu yang membuat customer melakukan churn atau tidak. Hal ini dapat digunakan untuk merencanakan strategi pendekatan atau reaching out terhadap customer yang berpotensi churn.
+### Goals :
+1. Identify client feature patterns for the most probable potential clients:
+    * Most important features correlated with the target
+    * Seasonality
+    * Socio-economic conditions
+2. Minimize revenue loss through promotion costs minimization : How much budget allocation percentage would be minimized ?
 
-## Stakeholders
-1. Perusahaan E-Commerce
-2. Customer / Pelanggan
+Based on these issues, the bank aims to predict the likelihood of a client agreeing to open a term deposit account. This can support the bank in executing marketing strategies focused on clients most likely to be interested, thereby saving costs, time, and resources.
 
-## Alur Machine Learning
-Berikut uraian alur program ipynb.
+Additionally, the bank wants to understand the factors influencing a client's decision to open a term deposit account or not, enabling them to develop better plans for approaching potential clients.
+
+### Stakeholder :
+* Bank marketing division : as main the stakeholder and the user of the resulting model, marketing division will minimize promotion cost by minimizing revenue loss through lower promotion cost due to more targeted marketing.
+
+## Machine Learning Workflow
+Below is the description of the program workflow in the IPYNB file.
 1. Data Cleaning
 2. Data Analysis
 3. Data Preparation
-4. Modeling dan Evaluasi
-5. Penarikan kesimpulan dari insight yang didapat
+4. Modeling and Evaluation
+5. Drawing conclusions from the insights obtained.
 
 ## Kesimpulan
 Berdasarkan hasil classification report dari model, dapat disimpulkan jika model digunakan untuk prediksi list customer yang akan churn, maka model ini dapat mengurangi 93% customer yang berpotensi loyal atau tidak churn untuk tidak perusahaan fokuskan dalam alokasi biaya promosi atau bahkan bisa ditiadakan, dan model ini mendapatkan 78% customer yang churn dari seluruh customer churn berdasarkan recall.
