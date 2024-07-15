@@ -57,7 +57,7 @@ Below is the description of the program workflow in the IPYNB file.
 4. Modeling and Evaluation
 5. Drawing conclusions from the insights obtained.
 
-## Kesimpulan
+## Conclusion
 #### Data Analysis
 
 In our data analysis, we focused exclusively on customer features to better understand their behavior and improve marketing strategies. The analysis explored various dimensions such as job types, marital status, education levels, credit defaults, housing and personal loans, contact communication methods, and timing of marketing efforts. We found that customers with different job types, marital statuses, and education levels show varying tendencies towards making deposits. For instance, single customers and those with professional education are more likely to make deposits. Interestingly, the presence of housing loans does not significantly influence deposit decisions, while personal loans are more common among customers. Effective marketing is facilitated through cellular contact and is most successful when conducted from Tuesday to Thursday. Seasonal trends also play a role, with March being a particularly effective month for securing deposits. Additionally, older customers, especially those in their 60s, are more likely to save in term deposits due to their stable financial situations. The analysis also highlighted the importance of the duration of contact and the positive influence of past campaign successes on current outcomes. However, it is crucial to note that certain high correlations among bank-related features, such as employment variation rate and consumer price index, are beyond the control of the marketing team.
