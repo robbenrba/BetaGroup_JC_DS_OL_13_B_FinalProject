@@ -58,40 +58,55 @@ Below is the description of the program workflow in the IPYNB file.
 5. Drawing conclusions from the insights obtained.
 
 ## Kesimpulan
-Berdasarkan hasil classification report dari model, dapat disimpulkan jika model digunakan untuk prediksi list customer yang akan churn, maka model ini dapat mengurangi 93% customer yang berpotensi loyal atau tidak churn untuk tidak perusahaan fokuskan dalam alokasi biaya promosi atau bahkan bisa ditiadakan, dan model ini mendapatkan 78% customer yang churn dari seluruh customer churn berdasarkan recall.
+#### Data Analysis
 
-Model ini memiliki presisi prediksi customer yang churn sebesar 70%. Hal ini berarti setiap kali model memprediksi bahwa seorang customer akan churn, kemungkinan tebakannya benar itu sebesar kurang lebih 70%. Oleh karena itu, masih ada False Positive atau akan ada customer yang sebenarnya tidak churn tetapi diprediksi model sebagai customer yang churn sebanyak 7% dari keseluruhan customer yang tidak churn berdasarkan recall.
+In our data analysis, we focused exclusively on customer features to better understand their behavior and improve marketing strategies. The analysis explored various dimensions such as job types, marital status, education levels, credit defaults, housing and personal loans, contact communication methods, and timing of marketing efforts. We found that customers with different job types, marital statuses, and education levels show varying tendencies towards making deposits. For instance, single customers and those with professional education are more likely to make deposits. Interestingly, the presence of housing loans does not significantly influence deposit decisions, while personal loans are more common among customers. Effective marketing is facilitated through cellular contact and is most successful when conducted from Tuesday to Thursday. Seasonal trends also play a role, with March being a particularly effective month for securing deposits. Additionally, older customers, especially those in their 60s, are more likely to save in term deposits due to their stable financial situations. The analysis also highlighted the importance of the duration of contact and the positive influence of past campaign successes on current outcomes. However, it is crucial to note that certain high correlations among bank-related features, such as employment variation rate and consumer price index, are beyond the control of the marketing team.
 
-Bila diandaikan biaya promosi per customer itu 50 USD dan jumlah customer dalam suatu kurun waktu sebanyak 200 orang di mana 100 orang churn, maka dalam kasus bisnis bisa dihitung sebagai berikut :
 
-Tanpa Model (semua customer dianggap potensi churn dan ditawarkan promosi) :
-- Total Biaya promosi = 200 x 50 USD = 10,000 USD
-- Biaya yang terbuang = 100 x 50 USD = 5,000 USD
-- Jumlah penghematan = 0 USD
+#### Machine Learning
+##### Translation and Adaptation:
 
-Dengan Model (hanya customer yang diprediksi oleh model churn yang kita check dan tawarkan) :
-- Total Biaya promosi = (78 x 50 USD) + (7 x 50 USD) = 3050 USD + 760 USD = 4,250 USD
-- Biaya yang terbuang = (100-(78+7)) x 50 USD = 750 USD 
-- Jumlah penghematan = 10,000 - 4,250 = 5,750 USD
+Based on the classification report results from the model, if the model is used to predict the list of customers who will deposit, it can reduce the promotional budget allocation by 93% for customers who are likely to be loyal or not deposit, allowing the company to focus costs or even eliminate them. Additionally, the model can identify 78% of depositing customers out of all potential depositing customers based on recall.
 
-Berdasarkan contoh hitungan sederhana tersebut, terlihat bahwa dengan menggunakan model klasifikasi dan memprediksi berapa banyak porsi customer yang kemungkina churn, maka perusahaan tersebut dapat menghemat biaya yang cukup besar tanpa mengorbankan terlalu banyak customer yang churn.
+This model has a precision of 70% for predicting depositing customers. This means that each time the model predicts a customer will deposit, there is approximately a 70% chance that the prediction is correct. However, there is still a false positive rate, with about 7% of non-depositing customers being incorrectly predicted as depositing customers based on recall.
 
+Assuming the promotional cost per customer is 50 USD and the total number of customers in a given period is 200, with 100 of them depositing, the business scenario can be calculated as follows:
+
+**Without the Model (assuming all customers are potential depositors and offering promotions to all):**
+- Total promotional cost = 200 x 50 USD = 10,000 USD
+- Wasted cost = 100 x 50 USD = 5,000 USD
+- Savings = 0 USD
+
+**With the Model (only offering promotions to customers predicted by the model to deposit):**
+- Total promotional cost = (78 x 50 USD) + (7 x 50 USD) = 3050 USD + 350 USD = 3,400 USD
+- Wasted cost = (100 - (78 + 7)) x 50 USD = 750 USD
+- Savings = 10,000 - 3,400 = 6,600 USD
+
+Based on this simple calculation, it is evident that using the classification model to predict the portion of customers likely to deposit allows the company to save a substantial amount of money without sacrificing too many potential depositing customers.
 
 ## Rekomendasi
-Hal-hal yang bisa dilakukan untuk developer untuk mengembangkan proyek dan modelnya :
-1. Membuat kebijakan dan sistem penjagaan input yang mendorong setiap kandidat untuk mengisi semua data yang diperlukan.
-2. Memberi opsi input untuk yang memang tidak ada atau nol.
-3. Menambahkan fitur baru yang kemungkinan bisa berhubungan dengan churn, seperti informasi yang terkait dengan pembayaran order dan deskripsi lain customer.
-4. Mencoba algoritma ML lain dan melakukan hyperparameter tuning yang lebih advanced.
-5. Mencoba grid search untuk metode fill pada cleaning.
-6. Menganalisa data yang model masih salah tebak untuk mengetahui karakteristik data tersebut, yang pada akhirnya akan dialurkan untuk menambah fitur atau feature engineering lagi.
+#### Data Analysis
+The comprehensive analysis of customer features provides valuable insights for the marketing department to enhance their approach. By identifying the key factors that influence deposit decisions, such as job types, marital status, education levels, and effective communication methods, the marketing team can tailor their strategies to target the right customer segments more effectively. The findings suggest that focusing on personalized and timely interactions, especially through cellular contact and during optimal times like March, can significantly improve deposit acquisition. Moreover, understanding the importance of conversation duration and leveraging past campaign successes can further boost current campaign outcomes. Despite the uncontrollable bank-related features, the customer-centric insights gained from this analysis offer a clear path for the marketing team to increase their success rates in securing deposits.
 
-Rekomendasi terhadap stakeholder atau perusahaan :
-1. Memperbanyak survey demi pengumpulan data yang lebih banyak secara volume maupun lebih beragam.
-2. Menawarkan promosi atau strategi lain yang menawarkan sebuah insentif pada customer atau pelanggan agar tertarik dan tidak churn.
-3. Berdasar feature importance, cashback dapat ditingkatkan untuk customer yang berpotensi untuk churn.
-4. Customer yang memiliki tujuan pengiriman jauh dapat diberi promo agar dapat mengurangi churn akibat alasan terkait seperti biaya delivery mahal ataupun lamanya delivery.
-5. Berdasarkan Tenure, perusahaan dapat mengadakan strategi marketing yang mendorong insentif untuk orang yang baru-baru memesan.
+#### Machine Learning
+##### Translation and Adaptation:
+
+##### Recommendations for Developers to Improve the Project and Model:
+
+1. Implement policies and input validation systems that encourage every candidate to fill in all required data.
+2. Provide input options for missing or zero values.
+3. Add new features that might relate to deposits, such as payment information and other customer descriptions.
+4. Try other ML algorithms and perform more advanced hyperparameter tuning.
+5. Use grid search for selecting the best imputation methods during data cleaning.
+6. Analyze data points where the model made incorrect predictions to understand their characteristics, which can then inform feature addition or further feature engineering.
+
+##### Recommendations for Stakeholders or the Company:
+
+1. Increase the number of surveys to collect more and more diverse data.
+2. Offer promotions or other strategies that provide incentives to customers to encourage them to make deposits.
+3. Based on feature importance, increase cashback incentives for customers who are likely to deposit.
+4. Provide promotions for customers with long-distance shipping to reduce deposit-related issues such as high delivery costs or long delivery times.
+5. Develop marketing strategies that offer incentives to new customers based on their tenure.
 
 <br/>
 Copyright &copy; 2024, Roberto Benedict & Gretty Margaretha.
