@@ -64,7 +64,6 @@ In our data analysis, we focused exclusively on customer features to better unde
 
 
 #### Machine Learning
-##### Translation and Adaptation:
 
 Based on the classification report results from the model, if the model is used to predict the list of customers who will deposit, it can reduce the promotional budget allocation by 93% for customers who are likely to be loyal or not deposit, allowing the company to focus costs or even eliminate them. Additionally, the model can identify 78% of depositing customers out of all potential depositing customers based on recall.
 
@@ -89,8 +88,6 @@ Based on this simple calculation, it is evident that using the classification mo
 The comprehensive analysis of customer features provides valuable insights for the marketing department to enhance their approach. By identifying the key factors that influence deposit decisions, such as job types, marital status, education levels, and effective communication methods, the marketing team can tailor their strategies to target the right customer segments more effectively. The findings suggest that focusing on personalized and timely interactions, especially through cellular contact and during optimal times like March, can significantly improve deposit acquisition. Moreover, understanding the importance of conversation duration and leveraging past campaign successes can further boost current campaign outcomes. Despite the uncontrollable bank-related features, the customer-centric insights gained from this analysis offer a clear path for the marketing team to increase their success rates in securing deposits.
 
 #### Machine Learning
-##### Translation and Adaptation:
-
 ##### Recommendations for Developers to Improve the Project and Model:
 
 1. Implement policies and input validation systems that encourage every candidate to fill in all required data.
