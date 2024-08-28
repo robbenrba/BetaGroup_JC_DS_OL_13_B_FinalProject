@@ -65,45 +65,64 @@ In our data analysis, we focused exclusively on customer features to better unde
 
 #### Machine Learning
 
-Based on the classification report results from the model, if the model is used to predict the list of customers who will deposit, it can reduce the promotional budget allocation by 93% for customers who are likely to be loyal or not deposit, allowing the company to focus costs or even eliminate them. Additionally, the model can identify 78% of depositing customers out of all potential depositing customers based on recall.
+Based on the classification report results from the model, it can be concluded that if the model is used to predict which customers will subscribe to a term deposit, the model can correctly identify 93% of the customers who will not subscribe, allowing the company to focus promotional costs only on potential subscribers, or even eliminate the cost for non-subscribers entirely. The model captures 72% of the customers who will subscribe out of all the actual subscribers based on recall.
 
-This model has a precision of 70% for predicting depositing customers. This means that each time the model predicts a customer will deposit, there is approximately a 70% chance that the prediction is correct. However, there is still a false positive rate, with about 7% of non-depositing customers being incorrectly predicted as depositing customers based on recall.
+The model has a precision of 38% for predicting customers who will subscribe. This means that each time the model predicts a customer will subscribe, there is approximately a 38% chance the prediction is correct. Therefore, there are still false positives, or customers who are predicted to subscribe but actually will not, amounting to 15% of all customers who will not subscribe based on recall.
 
-Assuming the promotional cost per customer is 50 USD and the total number of customers in a given period is 200, with 100 of them depositing, the business scenario can be calculated as follows:
+Assuming the promotional cost per customer is 50 USD and the number of customers in a certain period is 7,647 (6,796 non-subscribers + 851 subscribers), the business case can be calculated as follows:
 
-**Without the Model (assuming all customers are potential depositors and offering promotions to all):**
-- Total promotional cost = 200 x 50 USD = 10,000 USD
-- Wasted cost = 100 x 50 USD = 5,000 USD
-- Savings = 0 USD
+**Without the Model (all customers are considered potential subscribers and offered the promotion):**
+- Total Promotional Cost = 7,647 x 50 USD = 382,350 USD
+- Wasted Cost (on non-subscribers) = 6,796 x 50 USD = 339,800 USD
+- Total Savings = 0 USD
 
-**With the Model (only offering promotions to customers predicted by the model to deposit):**
-- Total promotional cost = (78 x 50 USD) + (7 x 50 USD) = 3050 USD + 350 USD = 3,400 USD
-- Wasted cost = (100 - (78 + 7)) x 50 USD = 750 USD
-- Savings = 10,000 - 3,400 = 6,600 USD
+**With the Model (only customers predicted to subscribe are checked and offered the promotion):**
+- Total Promotional Cost = (613 x 50 USD) + (1,018 x 50 USD) = 30,650 USD + 50,900 USD = 81,550 USD
+- Wasted Cost (on non-subscribers predicted to subscribe) = 1,018 x 50 USD = 50,900 USD
+- Total Savings = 382,350 USD - 81,550 USD = 300,800 USD
 
-Based on this simple calculation, it is evident that using the classification model to predict the portion of customers likely to deposit allows the company to save a substantial amount of money without sacrificing too many potential depositing customers.
+Based on this simple calculation example, it is evident that using a classification model to predict the likelihood of customer subscription can significantly reduce costs without sacrificing too many potential subscribers.
 
 ## Rekomendasi
 #### Data Analysis
 The comprehensive analysis of customer features provides valuable insights for the marketing department to enhance their approach. By identifying the key factors that influence deposit decisions, such as job types, marital status, education levels, and effective communication methods, the marketing team can tailor their strategies to target the right customer segments more effectively. The findings suggest that focusing on personalized and timely interactions, especially through cellular contact and during optimal times like March, can significantly improve deposit acquisition. Moreover, understanding the importance of conversation duration and leveraging past campaign successes can further boost current campaign outcomes. Despite the uncontrollable bank-related features, the customer-centric insights gained from this analysis offer a clear path for the marketing team to increase their success rates in securing deposits.
 
 #### Machine Learning
-##### Recommendations for Developers to Improve the Project and Model:
+##### Steps Developers Can Take to Improve the Project and Model:
 
-1. Implement policies and input validation systems that encourage every candidate to fill in all required data.
+1. Implement policies and input validation systems that encourage each candidate to fill in all required data.
 2. Provide input options for missing or zero values.
-3. Add new features that might relate to deposits, such as payment information and other customer descriptions.
-4. Try other ML algorithms and perform more advanced hyperparameter tuning.
-5. Use grid search for selecting the best imputation methods during data cleaning.
-6. Analyze data points where the model made incorrect predictions to understand their characteristics, which can then inform feature addition or further feature engineering.
+3. Add new features that could be related to bank term deposit subscriptions, such as payment information and other customer-related details.
+4. Experiment with other ML algorithms and perform more advanced hyperparameter tuning.
+5. Try grid search for imputation methods during data cleaning.
+6. Analyze data points that the model misclassifies to understand their characteristics, which can be used to enhance feature engineering.
 
-##### Recommendations for Stakeholders or the Company:
+##### Recommendations for Data:
 
-1. Increase the number of surveys to collect more and more diverse data.
-2. Offer promotions or other strategies that provide incentives to customers to encourage them to make deposits.
-3. Based on feature importance, increase cashback incentives for customers who are likely to deposit.
-4. Provide promotions for customers with long-distance shipping to reduce deposit-related issues such as high delivery costs or long delivery times.
-5. Develop marketing strategies that offer incentives to new customers based on their tenure.
+1. Collect more diverse and comprehensive data to improve model accuracy.
+2. Ensure data is up-to-date and relevant to current market conditions.
+
+##### Recommendations for Users and Stakeholders, **Bank Marketing Division**:
+
+1. Conduct more surveys to gather a larger and more diverse dataset.
+2. Offer promotions or other incentives to customers to encourage term deposit subscriptions.
+3. Based on feature importance, consider enhancing cashback offers for customers likely to subscribe to term deposits.
+4. Provide special promotions for customers with specific needs or preferences, such as those requiring high deposit amounts, to encourage subscriptions.
+5. Use customer tenure to create marketing strategies that incentivize new customers to open term deposits.
+
+##### Updated Business Case Calculation
+
+**Without the Model (all customers are considered potential subscribers and offered the promotion):**
+- Total Promotional Cost = 7,647 x 50 USD = 382,350 USD
+- Wasted Cost (on non-subscribers) = 6,796 x 50 USD = 339,800 USD
+- Total Savings = 0 USD
+
+**With the Model (only customers predicted to subscribe are checked and offered the promotion):**
+- Total Promotional Cost = (613 x 50 USD) + (1,018 x 50 USD) = 30,650 USD + 50,900 USD = 81,550 USD
+- Wasted Cost (on non-subscribers predicted to subscribe) = 1,018 x 50 USD = 50,900 USD
+- Total Savings = 382,350 USD - 81,550 USD = 300,800 USD
+
+By utilizing a classification model to predict which customers will subscribe to term deposits, the company can significantly reduce promotional costs while maintaining a high accuracy of targeting potential subscribers.
 
 <br/>
 Copyright &copy; 2024, Roberto Benedict & Gretty Margaretha.
