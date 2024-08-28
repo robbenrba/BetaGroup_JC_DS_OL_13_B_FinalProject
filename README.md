@@ -83,7 +83,7 @@ Assuming the promotional cost per customer is 50 USD and the number of customers
 
 Based on this simple calculation example, it is evident that using a classification model to predict the likelihood of customer subscription can significantly reduce costs without sacrificing too many potential subscribers.
 
-## Rekomendasi
+## Recommendation
 #### Data Analysis
 The comprehensive analysis of customer features provides valuable insights for the marketing department to enhance their approach. By identifying the key factors that influence deposit decisions, such as job types, marital status, education levels, and effective communication methods, the marketing team can tailor their strategies to target the right customer segments more effectively. The findings suggest that focusing on personalized and timely interactions, especially through cellular contact and during optimal times like March, can significantly improve deposit acquisition. Moreover, understanding the importance of conversation duration and leveraging past campaign successes can further boost current campaign outcomes. Despite the uncontrollable bank-related features, the customer-centric insights gained from this analysis offer a clear path for the marketing team to increase their success rates in securing deposits.
 
